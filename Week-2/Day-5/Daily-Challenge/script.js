@@ -43,14 +43,17 @@ function isNumber (userAnswer){
 
 function song (){
     let letAskNumber = prompt("How many bottles would you like to start with?")
-    let numberStart = isNumber(letAskNumber)
+    let number = isNumber(letAskNumber)
+    let numberMove = number
     let numberCounter = number
     let down = 0
-    for (let i = number; i > 0 ; i = i - 1){
+    for (let i = number; i >= 0 ; i = i - 1){
         down += 1
-        numberAtStart(numberCounter)
+        numberAtStart(numberMove)
         takeOneDown(down)
-        numberMove = remaining(numberStart,down)
+        numberMove = remaining(number,down)
+
     }
 }
+
 song()
