@@ -6,42 +6,51 @@
 // 4 funtions one for each line
 
 function numberAtStart (i){
-    console.log(`${i} bottles of bear on the wall`)
-    console.log(`${i} bottles of bear`)
+    if (i == 1){
+        console.log(`${i} bottle of bear on the wall`)
+        console.log(`${i} bottle of bear`)
+    } else{
+        console.log(`${i} bottles of bear on the wall`)
+        console.log(`${i} bottles of bear`)
+    }   
 }
 
 function takeOneDown (p){
-    console.log(`Take ${p} down, pass it around`)
+    if (p == 1){
+        console.log(`Take ${p} down, pass it around`)
+    } else{
+        console.log(`Take ${p} down, pass them around`)
+    }
 }
 
-function remaining (array) {
-    let remain = array[0]-array[1]
-    console.log(`${remain} bottles of bear on the wall`)
-}
-
-function isNumber (string){
-    while(isNaN(string) == true){
-        console.log("Not ")
-        string = prompt("Enter a number")
+function remaining (number,down) {
+    let remain = number-down
+    if (remain == 1){
+        console.log(`${remain} bottle of bear on the wall`)
+    } else {
+        console.log(`${remain} bottles of bear on the wall`)
     }
-    while(string == ""){
-        console.log("Not ")
-        string = prompt("Enter a number")
-    }
-    return string
+    return remain
+} 
 
+function isNumber (userAnswer){
+    while(isNaN(userAnswer) == true || userAnswer == ""){
+        console.log("Not")
+        userAnswer = prompt("Enter a number")
+    }
+    return userAnswer
 }
 
 function song (){
-    letAskNumber = prompt("How many bottles would you like to start with?")
-    number = isNumber(letAskNumber)
+    let letAskNumber = prompt("How many bottles would you like to start with?")
+    let numberStart = isNumber(letAskNumber)
+    let numberCounter = number
     let down = 0
-    for (i = number; i > 0 ; i = i - 1){
+    for (let i = number; i > 0 ; i = i - 1){
         down += 1
-        numberAtStart(number)
+        numberAtStart(numberCounter)
         takeOneDown(down)
-        remaining([number,down])
+        numberMove = remaining(numberStart,down)
     }
 }
-
 song()
