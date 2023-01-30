@@ -1,4 +1,4 @@
-let planetsArray = ["Venus","Mars","Jupiter","Saturn","Pluto"]
+let planetsArray = ["Venus","Mars","Jupiter","Saturn","Pluto","earth","Neptune"]
 
 let section = document.getElementsByTagName("section")[0]
 
