@@ -126,7 +126,6 @@ function searching(evt){
             } else {
                 document.getElementById(`${robots.id}`).classList.add("noDisplay")
                 document.getElementById(`${robots.id}`).classList.remove("display","robotCards")
-
             }
         })
     }
