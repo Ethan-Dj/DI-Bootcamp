@@ -1,0 +1,16 @@
+#images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 60vw;
+}
+
+.nice {
+    display: flex;
+    flex-direction: column;
+    padding:10px;
+    justify-content: space-between;
+}
+
+img {
+    width: 300px;
+}
