@@ -87,7 +87,7 @@ const morse = `{
 
 function toJS(morse){
     return new Promise((resolve,reject)=> {
-        if (morse.length == 0){
+        if (morse.keys.length == 0){
             reject("morse is empty")
         } else {
             resolve(JSON.parse(morse))
@@ -112,6 +112,7 @@ function toMorse(morseJS){
 
 const locat = document.getElementById("text").addEventListener("input", logit)
 let valEntered = ""
+
 function logit (e){
     valEntered = e.target.value.toLocaleLowerCase()
     toJS(morse)
@@ -132,6 +133,3 @@ function logit (e){
     })
     .catch(err => console.log(err))
 }
-
-
-
