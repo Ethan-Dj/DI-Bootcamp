@@ -1,4 +1,37 @@
+(async function() {
+    const data = await fetch(`https://v6.exchangerate-api.com/v6/e5ce8029d04b653caadeb473/codes/`)
+    const dataJSON = await data.json()
+    const array = dataJSON.supported_codes
+    array.forEach(elem => {
 
+        /////////////////////////////////////////////////////////////////////////////////
+        const currency = `${elem[0]}-${elem[1]}`
+
+        const location = document.getElementById("CurrencyFrom")
+        const element = document.createElement("option")
+        const text = document.createTextNode(currency)
+        element.setAttribute("value",elem[0])
+        element.setAttribute("id",elem[0])
+
+
+        location.appendChild(element).appendChild(text)
+
+        ////////////////////////////////////////////////////////////////////////////////////
+        const currency1 = `${elem[0]}-${elem[1]}`
+
+        const location1 = document.getElementById("CurrencyTo")
+        const element1 = document.createElement("option")
+        const text1 = document.createTextNode(currency1)
+        element1.setAttribute("value",elem[0])
+        element.setAttribute("id",`${elem[0]}F`)
+
+
+        location1.appendChild(element1).appendChild(text1)
+
+        //////////////////////////////////////////////////////////////////////////////////////
+        
+    })
+})();
 
 
 document.getElementById("enter").addEventListener("submit", retrieveValues)
@@ -8,12 +41,36 @@ function retrieveValues(evt){
 
     document.getElementById("display").innerHTML = "<h3>Loading...</h3>"
 
-    const from = document.getElementById("fromCurrency").value.toUpperCase()
-    const to = document.getElementById("toCurrency").value.toUpperCase()
+    const from = document.getElementById("CurrencyFrom").value
+    const to = document.getElementById("CurrencyTo").value
     const amount = Number(document.getElementById("amount").value)
+    console.log(from,to)
 
     convert(from,to,amount)
 }
+
+document.getElementById("switch").addEventListener("click", switchCurrency)
+
+function switchCurrency(evt){
+    evt.preventDefault()
+
+    document.getElementById("display").innerHTML = "<h3>Loading...</h3>"
+
+    const from = document.getElementById("CurrencyFrom").value
+    const to = document.getElementById("CurrencyTo").value
+
+    document.getElementById("CurrencyFrom").value = to
+    document.getElementById("CurrencyTo").value = from
+
+    const amount = Number(document.getElementById("amount").value)
+
+    convert(to,from,amount)
+}
+
+
+
+
+
 
 async function convert(from,to,amount){
     try{

@@ -8,18 +8,23 @@
 </head>
 <body>
     <form id="enter">
-        <h3>Please Enter Currency Codes:</h3>
-        <label for="fromCurrency">From: </label>
-        <input type="text" name="fromCurrency" id="fromCurrency">
-
-        <label for="toCurrency">To: </label>
-        <input type="text" name="toCurrency" id="toCurrency">
+        <label for="CurrencyFrom">Choose a Currency to convert from:</label>
+        <select name="CurrencyFrom" id="CurrencyFrom">
+    
+        </select>
+    
+        <label for="CurrencyTo">Choose a Currency to convert to:</label>
+        <select name="CurrencyTo" id="CurrencyTo">
+    
+        </select>
 
         <label for="amount">Amount:</label>
         <input type="text" name="amount" id="amount">
 
         <button>Convert Currency</button>
     </form>
+
+    <button id="switch">Switch</button>
 
     <div id="display"></div>
 
