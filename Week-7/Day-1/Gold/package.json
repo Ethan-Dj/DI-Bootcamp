@@ -1,0 +1,17 @@
+{
+  "name": "gold",
+  "version": "1.0.0",
+  "description": "",
+  "main": "date.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "age2": "^1.0.2",
+    "birthday": "^1.2.12",
+    "date": "^2.0.2",
+    "i": "^0.3.7"
+  }
+}
