@@ -2,14 +2,18 @@ const express = require("express")
 const cors = require('cors')
 const{products} = require("./database/products.js")
 const bodyParser = require("body-parser")
+const dotenv = require("dotenv")
+
+
+dotenv.config()
 const app = express()
 app.use(cors())
 
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json())
 
-app.listen(5009, () => {
-    console.log("run on port 5009") // app exectures when local host 5000 is run
+app.listen(process.env.PORT, () => {
+    console.log("run on port 5008") // app exectures when local host 5000 is run
 })
 
 app.use("/",express.static(__dirname + "public"))
@@ -41,6 +45,7 @@ app.get('/search',(req,res) => {
 })
 
 app.post("/product", (req,res)=>{
+    console.log("product")
     const newProduct = {
         id: products.length+1,
         name: req.body.name,
@@ -51,3 +56,25 @@ app.post("/product", (req,res)=>{
     res.status(200).json(products)
     //careful, only eed res once!!
 })
+
+app.put("/here/:id", (req,res) => {
+    const id = req.params.id
+    const index = products.findIndex(elem => elem.id == id)
+    console.log("here")
+    if (index === -1){
+        return res.status(404).json({msg:"not found"})
+    }
+    const updatedProduct = {
+        id : products[index].id,
+        name: req.body.name,
+        price: req.body.price
+    }
+    products[index] = updatedProduct
+    res.status(200).json(products)
+})
+
+// be very careful with the spelling of the path 
+// and that the postman is configured to the correct type
+
+
+
