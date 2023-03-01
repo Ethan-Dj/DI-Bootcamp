@@ -15,10 +15,12 @@ const db = knex({
   }
 })
 
-// knex allows you to connect to a postgre sql server with the above code
+module.exports = {db}
 
-db('products').select("id","name","price")
-.then(rows => console.log(rows))
+// // knex allows you to connect to a postgre sql server with the above code
 
-// the env file keeps all environment variables in one place, 
-// including sensitive data
+// db('products').select("id","name","price")
+// .then(rows => console.log(rows))
+
+// // the env file keeps all environment variables in one place, 
+// // including sensitive data

@@ -1,0 +1,20 @@
+let objectData = []
+// async function getting() {
+//     let feed = await parser.parseURL('https://www.reddit.com/.rss');
+//     console.log(feed.title);
+
+//     feed.items.forEach(item => {
+//         const data = {
+//             title: item.title,
+//             link: item.link
+//         }
+//     objectData.push({
+//         title: item.title,
+//         link: item.link
+//     })
+//     console.log(objectData.length)
+//   });
+
+// };
+
+// getting()
