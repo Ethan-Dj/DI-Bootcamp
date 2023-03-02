@@ -34,5 +34,36 @@ body{
         cursor: pointer;
 }
 
+#upload {
+    padding: 2px 20px;
+    border-radius: 10px;
+    border-color: #1314FB;
+    background-color: #1314FB;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+#buttonUpload {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#next {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.move {
+    width: 150px;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
 
 

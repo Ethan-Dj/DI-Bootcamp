@@ -1,3 +1,31 @@
+
+
+
+if (window.navigator.geolocation) {
+    window.navigator.geolocation.getCurrentPosition(console.log, console.log);
+   } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+// below is all mapbox functionality, not too be touched until later
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
 mapboxgl.accessToken = 'pk.eyJ1IjoiZXRoYW4xMjEiLCJhIjoiY2wzYmV2bW50MGQwbTNpb2lxdm56cGdpNyJ9.-wLLlz-sFhNPiXCyVCQ6kg';
     const map = new mapboxgl.Map({
         container: 'map',
