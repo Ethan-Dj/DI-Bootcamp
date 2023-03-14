@@ -20,3 +20,23 @@ export const total = (value) => {
 
     }
 }
+
+// export const getUsers = (arr) => {
+//     return {
+//         type: "USERS",
+//         payload: arr
+//     }
+// }
+
+export const getUsers = () => (dispatch, getState) => {
+    
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(res => res.json())
+    .then(data => {
+      // setUsers(data)
+        dispatch({
+            type: "USERS",
+            payload: data
+        })
+    })
+}
